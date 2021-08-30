@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SearchComponent } from './Search/Search.component';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 const routes: Routes = [
   {
@@ -13,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./Search/Search.module').then(e => e.SearchModule)
   },
   {
-    path: 'playlist',
+    path: 'playlist/:id',
     loadChildren: () => import('./playlist/playlist.module').then(e => e.PlaylistModule)
   },
   {
@@ -35,4 +38,8 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+  constructor (private router:ActivatedRoute ){
+    
+  }
+}

@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomePageModule } from './home-page/home-page.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchModule } from './Search/Search.module';
-
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +17,7 @@ import { SearchModule } from './Search/Search.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     // SearchModule,
     // HomePageModule
   ],

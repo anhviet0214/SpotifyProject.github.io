@@ -1,21 +1,25 @@
 <div class="home-page">
-  <div class="container">
-    <h1 style="color: red; position: relative; z-index: 1000; font-size: 100px;">test code    git hub test code    git hubtest code    git hubtest code    git hub</h1>
+  <h1 class="mt-3 ms-3" style="color:white" *ngIf="!token">Login to see more!</h1>
+  <div class="wrapper" *ngIf="token">
+    <h1 style="color: red; position: relative; z-index: 1000; font-size: 100px;"></h1>
+
+
+
     <!-- lựa chọn sotify -->
     <section>
 
       <div class="title-list">
-        <h2><a href="#">Lựa chọn của Spotify</a></h2>
-        <a href="#">XEM TẤT CẢ</a>
+        <h2>Lựa chọn của Spotify</h2>
+        <a>XEM TẤT CẢ</a>
       </div>
 
-      <div class="row">
+      <div class="row cus-row">
 
-        <div class="col-md-2" routerLink="playlist">
-          <div class="content">
+        <div *ngFor="let item of dataPlaylistVn" class="col-xl-2 col-5" [routerLink]="'/playlist/'+ item.id">
+          <div class="content" >
 
             <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002b588ea0ae01d04735914963d" alt="#">
+              <img [src]="item.images[0].url" alt="#">
               <div class="icon-playing">
                 <button>
                   <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
@@ -26,17 +30,29 @@
             </div>
 
             <div class="title-content">
-              <h3><a href="#">Hot Hits Vietnam</a></h3>
-              <p>Đông tới Tây, đây là những ca khúc thịnh hành nhất ở Việt Nam. Ảnh bìa: The Kid LAROI, Justin Bieber</p>
+              <h5>{{item.name}}</h5>
+              <p>{{item.description}}</p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-2">
-          <div class="content">
+      </div>
+    </section>
+
+    <section>
+
+      <div class="title-list">
+        <h2>Gợi Ý Cho Bạn</h2>
+        <a>XEM TẤT CẢ</a>
+      </div>
+
+      <div class="row cus-row">
+
+        <div *ngFor="let item of dataPlaylistUs" class="col-xl-2 col-5" [routerLink]="'/playlist/'+ item.id">
+          <div class="content" >
 
             <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002176473996390e4cedcda7d18" alt="#">
+              <img [src]="item.images[0].url" alt="#">
               <div class="icon-playing">
                 <button>
                   <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
@@ -47,17 +63,29 @@
             </div>
 
             <div class="title-content">
-              <h3><a href="#">EQUAL Vietnam</a></h3>
-              <p>Cùng tôn vinh tài năng và âm nhạc của những nữ nghệ sĩ Việt. Ảnh bìa: Orange</p>
+              <h5>{{item.name}}</h5>
+              <p>{{item.description}}</p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-2">
-          <div class="content">
+      </div>
+    </section>
+
+    <section>
+
+      <div class="title-list">
+        <h2>Nên Nghe</h2>
+        <a>XEM TẤT CẢ</a>
+      </div>
+
+      <div class="row cus-row">
+
+        <div *ngFor="let item of dataPlaylistUk" class="col-xl-2 col-5" [routerLink]="'/playlist/'+ item.id">
+          <div class="content" >
 
             <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002a3a78d86e8ea252f7a5e9434" alt="#">
+              <img [src]="item.images[0].url" alt="#">
               <div class="icon-playing">
                 <button>
                   <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
@@ -68,847 +96,16 @@
             </div>
 
             <div class="title-content">
-              <h3><a href="#">V-Pop Không Thể Thiếu</a></h3>
-              <p>V-Pop đã đơm hoa trên những khúc ca này. Ảnh bìa: Phan Mạnh Quỳnh</p>
+              <h5>{{item.name}}</h5>
+              <p>{{item.description}}</p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002497b5d2c7ec0a266d5f21363" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Pop Rising Vietnam</a></h3>
-              <p>Những ca khúc sẽ thành hit trong nay mai. Ảnh bìa: Phùng Khánh Linh</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f000000023a48fe6197757a5ad21fe53f" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Thiên Hạ Nghe Gì</a></h3>
-              <p>Những gì mà người bên cạnh bạn đang nghe. Ảnh bìa: Độ Mixi, Phuc Du, Pháo, Masew</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002e45cab2258ad2734e3455cd8" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Fresh Finds Vietnam</a></h3>
-              <p>Khám phá các bài hát đáng nghe từ những cái tên có thể bạn chưa biết. Ảnh bìa: Khải; thiết kế: Isu Kim</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- bảng xếp hạng -->
-    <section>
 
-      <div class="title-list">
-        <h2><a href="#">Bảng xếp hạng</a></h2>
-        <!-- <a href="#">XEM TẤT CẢ</a> -->
-      </div>
-
-      <div class="row">
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_vn_default.jpg" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">50 bài hát hàng đầu tại Việt Nam</a></h3>
-              <p>Thông tin cập nhật hằng ngày về những bản nhạc được nghe nhiều nhất hiện nay tại Việt Nam.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">50 bài hát hàng đầu tại Toàn Cầu</a></h3>
-              <p>Thông tin cập nhật hằng ngày về những bản nhạc được nghe nhiều nhất hiện nay tại Toàn Cầu.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002b588ea0ae01d04735914963d" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Hot Hits Vietnam</a></h3>
-              <p>Đông tới Tây, đây là những ca khúc thịnh hành nhất ở Việt Nam. Ảnh bìa: The Kid LAROI, Justin Bieber</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- tập trung -->
-    <section>
-
-      <div class="title-list">
-        <div class="content-text">
-          <h2><a href="#">Tập trung</a></h2>
-          <p>Âm nhạc giúp bạn tập trung.</p>
-        </div>
-        <a href="#">XEM TẤT CẢ</a>
-      </div>
-
-      <div class="row">
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002ca5a7517156021292e5663a6" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Peaceful Piano</a></h3>
-              <p>Relax and indulge with beautiful piano pieces</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f000000023466e2ac76e504f4131af598" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Music For Concentration</a></h3>
-              <p>Minimalism, electronica and modern classical to concentrate to.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f0000000218e20d8d2bc7aa007d305e57" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Intense Studying</a></h3>
-              <p>Focus-enhancing piano for your study session.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002aba1f07094bd3e98cd0122de" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Rain Sounds</a></h3>
-              <p>Steady rain without any thunder.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f000000029482afb3a389ee6cbb28cf13" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Êm Đềm</a></h3>
-              <p>Thư giãn cùng những giai điệu dịu êm</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002e1000ba49dd2f1095ec5b6df" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">lofi beats</a></h3>
-              <p>Beats to relax, study, and focus...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- tâm trạng -->
-    <section>
-
-      <div class="title-list">
-        <div class="content-text">
-          <h2><a href="#">Tâm trạng</a></h2>
-          <p>Playlist hợp tâm trạng của bạn.</p>
-        </div>
-        <a href="#">XEM TẤT CẢ</a>
-      </div>
-
-      <div class="row">
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002ca5a7517156021292e5663a6" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Peaceful Piano</a></h3>
-              <p>Relax and indulge with beautiful piano pieces</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f000000023466e2ac76e504f4131af598" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Music For Concentration</a></h3>
-              <p>Minimalism, electronica and modern classical to concentrate to.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f0000000218e20d8d2bc7aa007d305e57" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Intense Studying</a></h3>
-              <p>Focus-enhancing piano for your study session.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002aba1f07094bd3e98cd0122de" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Rain Sounds</a></h3>
-              <p>Steady rain without any thunder.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f000000029482afb3a389ee6cbb28cf13" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Êm Đềm</a></h3>
-              <p>Thư giãn cùng những giai điệu dịu êm</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002e1000ba49dd2f1095ec5b6df" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">lofi beats</a></h3>
-              <p>Beats to relax, study, and focus...</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bản phát hành mới phổ biến -->
-    <section>
-
-      <div class="title-list">
-        <h2><a href="#">Bản phát hành mới phổ biến</a></h2>
-        <a href="#">XEM TẤT CẢ</a>
-      </div>
-
-      <div class="row">
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002b588ea0ae01d04735914963d" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Hot Hits Vietnam</a></h3>
-              <p>Đông tới Tây, đây là những ca khúc thịnh hành nhất ở Việt Nam. Ảnh bìa: The Kid LAROI, Justin Bieber</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002176473996390e4cedcda7d18" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">EQUAL Vietnam</a></h3>
-              <p>Cùng tôn vinh tài năng và âm nhạc của những nữ nghệ sĩ Việt. Ảnh bìa: Orange</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002a3a78d86e8ea252f7a5e9434" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">V-Pop Không Thể Thiếu</a></h3>
-              <p>V-Pop đã đơm hoa trên những khúc ca này. Ảnh bìa: Phan Mạnh Quỳnh</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002497b5d2c7ec0a266d5f21363" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Pop Rising Vietnam</a></h3>
-              <p>Những ca khúc sẽ thành hit trong nay mai. Ảnh bìa: Phùng Khánh Linh</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f000000023a48fe6197757a5ad21fe53f" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Thiên Hạ Nghe Gì</a></h3>
-              <p>Những gì mà người bên cạnh bạn đang nghe. Ảnh bìa: Độ Mixi, Phuc Du, Pháo, Masew</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002e45cab2258ad2734e3455cd8" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Fresh Finds Vietnam</a></h3>
-              <p>Khám phá các bài hát đáng nghe từ những cái tên có thể bạn chưa biết. Ảnh bìa: Khải; thiết kế: Isu Kim</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Dừng tay nghe chút nhạc -->
-    <section>
-
-      <div class="title-list">
-        <h2><a href="#">Dừng tay nghe chút nhạc</a></h2>
-        <a href="#">XEM TẤT CẢ</a>
-      </div>
-
-      <div class="row">
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002b588ea0ae01d04735914963d" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Hot Hits Vietnam</a></h3>
-              <p>Đông tới Tây, đây là những ca khúc thịnh hành nhất ở Việt Nam. Ảnh bìa: The Kid LAROI, Justin Bieber</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002176473996390e4cedcda7d18" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">EQUAL Vietnam</a></h3>
-              <p>Cùng tôn vinh tài năng và âm nhạc của những nữ nghệ sĩ Việt. Ảnh bìa: Orange</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002a3a78d86e8ea252f7a5e9434" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">V-Pop Không Thể Thiếu</a></h3>
-              <p>V-Pop đã đơm hoa trên những khúc ca này. Ảnh bìa: Phan Mạnh Quỳnh</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002497b5d2c7ec0a266d5f21363" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Pop Rising Vietnam</a></h3>
-              <p>Những ca khúc sẽ thành hit trong nay mai. Ảnh bìa: Phùng Khánh Linh</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f000000023a48fe6197757a5ad21fe53f" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Thiên Hạ Nghe Gì</a></h3>
-              <p>Những gì mà người bên cạnh bạn đang nghe. Ảnh bìa: Độ Mixi, Phuc Du, Pháo, Masew</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002e45cab2258ad2734e3455cd8" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Fresh Finds Vietnam</a></h3>
-              <p>Khám phá các bài hát đáng nghe từ những cái tên có thể bạn chưa biết. Ảnh bìa: Khải; thiết kế: Isu Kim</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- nhạc nền cho ngôi nhà của bạn -->
-    <section>
-
-      <div class="title-list">
-        <h2><a href="#">nhạc nền cho ngôi nhà của bạn</a></h2>
-        <a href="#">XEM TẤT CẢ</a>
-      </div>
-
-      <div class="row">
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002b588ea0ae01d04735914963d" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Hot Hits Vietnam</a></h3>
-              <p>Đông tới Tây, đây là những ca khúc thịnh hành nhất ở Việt Nam. Ảnh bìa: The Kid LAROI, Justin Bieber</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002176473996390e4cedcda7d18" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">EQUAL Vietnam</a></h3>
-              <p>Cùng tôn vinh tài năng và âm nhạc của những nữ nghệ sĩ Việt. Ảnh bìa: Orange</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002a3a78d86e8ea252f7a5e9434" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">V-Pop Không Thể Thiếu</a></h3>
-              <p>V-Pop đã đơm hoa trên những khúc ca này. Ảnh bìa: Phan Mạnh Quỳnh</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002497b5d2c7ec0a266d5f21363" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Pop Rising Vietnam</a></h3>
-              <p>Những ca khúc sẽ thành hit trong nay mai. Ảnh bìa: Phùng Khánh Linh</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f000000023a48fe6197757a5ad21fe53f" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Thiên Hạ Nghe Gì</a></h3>
-              <p>Những gì mà người bên cạnh bạn đang nghe. Ảnh bìa: Độ Mixi, Phuc Du, Pháo, Masew</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="content">
-
-            <div class="img-music">
-              <img src="https://i.scdn.co/image/ab67706f00000002e45cab2258ad2734e3455cd8" alt="#">
-              <div class="icon-playing">
-                <button>
-                  <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
-                    <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
-                  </svg>
-                </button>
-              </div>
-            </div>
-
-            <div class="title-content">
-              <h3><a href="#">Fresh Finds Vietnam</a></h3>
-              <p>Khám phá các bài hát đáng nghe từ những cái tên có thể bạn chưa biết. Ảnh bìa: Khải; thiết kế: Isu Kim</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 </div>
