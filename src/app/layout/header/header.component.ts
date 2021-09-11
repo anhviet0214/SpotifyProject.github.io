@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from 'rxjs';
-import { cart } from '../core/data/data.component';
-import { AppServiceService } from '../service/app-service.service';
-import { GetAlbumService } from '../service/getAlbum.service';
-import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { Subject } from 'rxjs';
+import { AppServiceService } from 'src/app/service/app-service.service';
+import { Location } from '@angular/common'
+
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class HeaderComponent implements OnInit {
+
   token!: any;
   [x: string]: any;
   searchArtist$ = new Subject<string>();
@@ -60,9 +60,9 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.router.fragment.subscribe((fragment) => {
-      this.token = new URLSearchParams(fragment!).get('access_token');
-    });
+    // this.router.fragment.subscribe((fragment) => {
+    //   this.token = new URLSearchParams(fragment!).get('access_token');
+    // });
   }
 
   handlePlaylistNew(id: any) {
@@ -76,15 +76,4 @@ export class NavbarComponent implements OnInit {
   nextPage() {
     this.location.forward();
   }
-
-  // const getTokenFromUrl = () => {
-  //   return window.location.hash
-  //     .substring(1)
-  //     .split('&')
-  //     .reduce((initial,item) => {
-  //       let parts = item.split('=');
-  //       initial {parts[0]} = decodeURIComponent(parts[1])
-  //       return initial;
-
-  //     }, {});
 }

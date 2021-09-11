@@ -1,26 +1,25 @@
-<div class="home-page">
-  <h1 class="mt-3 ms-3" style="color:white" *ngIf="!token">Login to see more!</h1>
-  <div class="wrapper" *ngIf="token">
-    <h1 style="color: red; position: relative; z-index: 1000; font-size: 100px;"></h1>
+<h1 class="mt-3 ms-3" style="color:white" *ngIf="!token">Login to see more!</h1>
+<div class="wrapper d-grid"> <!-- old name :home-page -->
 
-
+  <div class="content d-grid" *ngIf="token"> <!-- old name: wrapper-->
 
     <!-- lựa chọn sotify -->
     <section>
 
-      <div class="title-list">
-        <h2>Lựa chọn của Spotify</h2>
-        <a>XEM TẤT CẢ</a>
+      <div class="title d-flex justify-content-between align-items-end">  <!--old name:title-list -->
+        <div class="left">                                                 <!-- old : khong co div-->
+          <h2>Lựa chọn của Spotify</h2>
+        </div>
+        <p><a class="desc">XEM NHIỀU HƠN</a></p>
       </div>
 
-      <div class="row cus-row">
+      <div class="catelog d-grid">                            <!-- old name: row cus-row-->
 
-        <div *ngFor="let item of dataPlaylistVn" class="col-xl-2 col-5" [routerLink]="'/playlist/'+ item.id">
-          <div class="content" >
+        <div class="card cus-card" *ngFor="let item of dataPlaylistVn" [routerLink]="'/playlist/'+ item.id">  <!--old name:col-xl-2 col-5 -->
 
-            <div class="img-music">
+            <div class="image">                             <!-- old name:img-music  -->
               <img [src]="item.images[0].url" alt="#">
-              <div class="icon-playing">
+              <div class="btn-play">               <!-- old name:icon-playing -->
                 <button>
                   <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
                     <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
@@ -29,11 +28,10 @@
               </div>
             </div>
 
-            <div class="title-content">
-              <h5>{{item.name}}</h5>
-              <p>{{item.description}}</p>
+            <div class="info">                  <!-- old name:title-content-->
+              <p class="name-card">{{item.name}}</p>              <!-- old: h5,p-->
+              <p class="desc">{{item.description}}</p>
             </div>
-          </div>
         </div>
 
       </div>
@@ -41,19 +39,20 @@
 
     <section>
 
-      <div class="title-list">
-        <h2>Gợi Ý Cho Bạn</h2>
-        <a>XEM TẤT CẢ</a>
+      <div class="title d-flex justify-content-between align-items-end">  <!--old name:title-list -->
+        <div class="left">                                                 <!-- old : khong co div-->
+          <h2>Lựa chọn của Spotify</h2>
+        </div>
+        <p><a class="desc">XEM NHIỀU HƠN</a></p>
       </div>
 
-      <div class="row cus-row">
+      <div class="catelog d-grid">                            <!-- old name: row cus-row-->
 
-        <div *ngFor="let item of dataPlaylistUs" class="col-xl-2 col-5" [routerLink]="'/playlist/'+ item.id">
-          <div class="content" >
+        <div class="card cus-card" *ngFor="let item of dataPlaylistUk" [routerLink]="'/playlist/'+ item.id">  <!--old name:col-xl-2 col-5 -->
 
-            <div class="img-music">
+            <div class="image">                             <!-- old name:img-music  -->
               <img [src]="item.images[0].url" alt="#">
-              <div class="icon-playing">
+              <div class="btn-play">               <!-- old name:icon-playing -->
                 <button>
                   <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
                     <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
@@ -62,11 +61,10 @@
               </div>
             </div>
 
-            <div class="title-content">
-              <h5>{{item.name}}</h5>
-              <p>{{item.description}}</p>
+            <div class="info">                  <!-- old name:title-content-->
+              <p class="name-card">{{item.name}}</p>              <!-- old: h5,p-->
+              <p class="desc">{{item.description}}</p>
             </div>
-          </div>
         </div>
 
       </div>
@@ -74,19 +72,20 @@
 
     <section>
 
-      <div class="title-list">
-        <h2>Nên Nghe</h2>
-        <a>XEM TẤT CẢ</a>
+      <div class="title d-flex justify-content-between align-items-end">  <!--old name:title-list -->
+        <div class="left">                                                 <!-- old : khong co div-->
+          <h2>Lựa chọn của Spotify</h2>
+        </div>
+        <p><a class="desc">XEM NHIỀU HƠN</a></p>
       </div>
 
-      <div class="row cus-row">
+      <div class="catelog d-grid">                            <!-- old name: row cus-row-->
 
-        <div *ngFor="let item of dataPlaylistUk" class="col-xl-2 col-5" [routerLink]="'/playlist/'+ item.id">
-          <div class="content" >
+        <div class="card cus-card" *ngFor="let item of dataPlaylistUs" [routerLink]="'/playlist/'+ item.id">  <!--old name:col-xl-2 col-5 -->
 
-            <div class="img-music">
+            <div class="image">                             <!-- old name:img-music  -->
               <img [src]="item.images[0].url" alt="#">
-              <div class="icon-playing">
+              <div class="btn-play">               <!-- old name:icon-playing -->
                 <button>
                   <svg height="16" role="img" width="16" viewBox="0 0 24 24" aria-hidden="true">
                     <polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon>
@@ -95,11 +94,10 @@
               </div>
             </div>
 
-            <div class="title-content">
-              <h5>{{item.name}}</h5>
-              <p>{{item.description}}</p>
+            <div class="info">                  <!-- old name:title-content-->
+              <p class="name-card">{{item.name}}</p>              <!-- old: h5,p-->
+              <p class="desc">{{item.description}}</p>
             </div>
-          </div>
         </div>
 
       </div>
@@ -109,3 +107,5 @@
 
   </div>
 </div>
+
+

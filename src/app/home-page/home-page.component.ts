@@ -46,7 +46,6 @@ export class HomePageComponent implements OnInit {
     this.getAlbum.getAlbumVn().subscribe(playlist => {
       this.dataPlaylistVn =playlist.playlists.items;
 
-
     }) ;
   }
   getAlbumUS() {

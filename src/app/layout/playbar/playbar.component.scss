@@ -1,0 +1,67 @@
+.footer {
+  background-color: black;
+  color: white;
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  z-index: 9999;
+  bottom: 0;
+  .left {
+    position: relative;
+    .image {
+      position: relative;
+      width: 12%;
+      padding-bottom: 12%;
+      margin-right: 10px;
+
+      img {
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border-radius: 2px;
+        box-shadow: 0px 0px 10px 1px #767676;
+      }
+    }
+    .info {
+      text-align: left;
+    }
+  }
+  input[type="range"] {
+    outline: none;
+    height: 3px;
+    border-radius: 10px;
+  }
+  button {
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.815);
+    border-radius: 50%;
+    transition: all 0.1s ease 0s;
+    &:hover {
+      color: white;
+    }
+  }
+  .middle {
+    #btn-play {
+      background: white;
+      color: black;
+      width: 30px;
+      height: 30px;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+    span {
+      color: #ddd;
+      font-size: 12px;
+    }
+    input[type="range"] {
+      width: 70%;
+      margin: 5px 2px;
+    }
+  }
+}

@@ -1,2 +1,23 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div class="wrapper">
+
+  <div class="content">
+    <aside class="nav-bar">
+      <app-navbar></app-navbar>
+    </aside>
+
+    <div class="content-view">
+      <div class="head">
+        <app-header></app-header>
+      </div>
+
+      <div class="main-view">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <app-playbar></app-playbar>
+  </div>
+</div>

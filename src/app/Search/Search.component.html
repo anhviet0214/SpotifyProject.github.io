@@ -13,7 +13,6 @@
           </svg>
         </button>
         <input type="text" placeholder="Nghệ sĩ, bài hát hoặc podcast" (input)="searchArtist$.next(search.value)" #search>
-        {{ search.value }}
       </form>
     </div>
     <!-- Search-Page default -->
@@ -125,7 +124,5 @@
 
   </div>
   </div>
-
-  <router-outlet></router-outlet>
 
 </div>

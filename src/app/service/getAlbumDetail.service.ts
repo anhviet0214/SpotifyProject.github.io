@@ -13,12 +13,10 @@ export class GetAlbumDetailService {
     private http:HttpClient ,
     private activatedRoute:ActivatedRoute,
 
-  
-  ) { }
-  
-  getAlbumDetail(id:any): Observable<any> {
 
-    console.log(id)
+  ) { }
+
+  getAlbumDetail(id:any): Observable<any> {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',

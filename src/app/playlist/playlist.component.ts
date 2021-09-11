@@ -9,7 +9,8 @@ import { GetAlbumDetailService } from '../service/getAlbumDetail.service';
   styleUrls: ['./playlist.component.scss']
 })
 export class PlaylistComponent implements OnInit {
-  dataPlaylistDetail:any 
+  playList:any;
+  playListTracks:any;
   constructor(
     private appService: AppServiceService,
     private activatedRoute:ActivatedRoute,
@@ -21,15 +22,16 @@ export class PlaylistComponent implements OnInit {
     if(params.get('id')){
       this.getDetail(params.get('id'));
     }
-  
-     
-     
+
+
+
    })
   }
   getDetail(id:any) {
   this.getAlbumDetail.getAlbumDetail(id).subscribe(playlist => {
-    this.dataPlaylistDetail = playlist;
-    console.log(this.dataPlaylistDetail)
+    this.playList = playlist;
+    this.playListTracks = playlist.tracks;
+    console.log(this.playListTracks)
   })
   }
 }
