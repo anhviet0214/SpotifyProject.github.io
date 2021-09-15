@@ -1,128 +1,183 @@
 <div class="wrapper">
 
-  <div class="container">
+  <div class="content">
 
-    <div class="search mt-4">
+    <div class="search">
       <form>
         <button>
-          <svg height="24" role="img" width="24" viewBox="0 0 512 512" class="CPgTPk9wPOVigmNI6xWP"
-            aria-hidden="true">
+          <svg height="24" role="img" width="24" viewBox="0 0 512 512" class="CPgTPk9wPOVigmNI6xWP" aria-hidden="true">
             <path
               d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z"
               fill="currentColor"></path>
           </svg>
         </button>
-        <input type="text" placeholder="Nghệ sĩ, bài hát hoặc podcast" (input)="searchArtist$.next(search.value)" #search>
+        <input type="text" placeholder="Nghệ sĩ, bài hát hoặc podcast" (input)="searchArtist$.next(search.value)"
+          #search>
       </form>
     </div>
     <!-- Search-Page default -->
-  <div class="default">
+    <div class="default" *ngIf="isDefault">
 
-    <!-- listen the most -->
-    <div class="top">
-      <h3 class="my-4">Thể loại bạn nghe nhiều nhất</h3>
-      <div class="category d-flex">
+      <!-- listen the most -->
+      <div class="top">
+        <h3 class="my-4">Thể loại bạn nghe nhiều nhất</h3>
+        <div class="category d-flex">
 
-        <!-- List category -->
-        <div class="item">
-          <p class="title">Dance / Điện tử</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+          <!-- List category -->
+          <div class="item">
+            <p class="title">Dance / Điện tử</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
           </div>
-        </div>
 
-        <div class="item">
-          <p class="title">Hip-hop</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/flagged/photo-1564434369363-696a2e6d96f9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+          <div class="item">
+            <p class="title">Hip-hop</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/flagged/photo-1564434369363-696a2e6d96f9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
           </div>
-        </div>
-        <div class="item">
-          <p class="title">Indie</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/photo-1615748562359-3a430a3b5e56?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+          <div class="item">
+            <p class="title">Indie</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1615748562359-3a430a3b5e56?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
           </div>
-        </div>
-        <div class="item">
-          <p class="title">Pop</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/photo-1468141589425-dcddef77ddad?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+          <div class="item">
+            <p class="title">Pop</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1468141589425-dcddef77ddad?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
           </div>
+
+
+
         </div>
-
-
-
       </div>
+
+
+
+
+      <!-- all category -->
+      <div class="all-category">
+        <h3 class="my-4">Duyệt tìm tất cả</h3>
+        <div class="category d-flex flex-wrap">
+
+          <div class="item">
+            <p class="title">Podcast</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
+          </div>
+
+          <div class="item">
+            <p class="title">Dành cho bạn</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
+          </div>
+
+          <div class="item">
+            <p class="title">Bảng xếp hạng</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
+          </div>
+
+          <div class="item">
+            <p class="title">Mới phát hành</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
+          </div>
+
+          <div class="item">
+            <p class="title">Khám phá</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
+          </div>
+
+          <div class="item">
+            <p class="title">Concerts</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
+          </div>
+
+          <div class="item">
+            <p class="title">Pop</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
+          </div>
+
+          <div class="item">
+            <p class="title">Pop</p>
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
+    <!-- Result-search -->
+    <div class="result" *ngIf="!isDefault">
+      <div class="top">
+        div.
+      </div>
 
+      <div class="artist">
+        artist
+      </div>
 
+      <div class="album">
+        album
+      </div>
 
-    <!-- all category -->
-    <div class="all-category">
-      <h3 class="my-4">Duyệt tìm tất cả</h3>
-      <div class="category d-flex flex-wrap">
+      <div class="playlist">
+        playlist
+      </div>
 
-        <div class="item" >
-          <p class="title">Podcast</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          </div>
-        </div>
+      <div class="podcast">
+        podcast
+      </div>
 
-        <div class="item" >
-          <p class="title">Dành cho bạn</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          </div>
-        </div>
+      <div class="eps">
+        eps
+      </div>
 
-        <div class="item" >
-          <p class="title">Bảng xếp hạng</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          </div>
-        </div>
-
-        <div class="item" >
-          <p class="title">Mới phát hành</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          </div>
-        </div>
-
-        <div class="item" >
-          <p class="title">Khám phá</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          </div>
-        </div>
-
-        <div class="item" >
-          <p class="title">Concerts</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          </div>
-        </div>
-
-        <div class="item" >
-          <p class="title">Pop</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          </div>
-        </div>
-
-        <div class="item" >
-          <p class="title">Pop</p>
-          <div class="image">
-            <img src="https://images.unsplash.com/photo-1518084312042-99868a8ee2e2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHNpbmdlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-          </div>
-        </div>
-
+      <div class="document">
+        document
       </div>
     </div>
-
-  </div>
   </div>
 
 </div>

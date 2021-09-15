@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { AppServiceService } from 'src/app/service/app-service.service';
 import { Location } from '@angular/common'
+import { StorageService } from 'src/app/service/storage.service';
 
 @Component({
   selector: 'app-header',
@@ -56,15 +57,19 @@ export class HeaderComponent implements OnInit {
   constructor(
     private appService: AppServiceService,
     private location: Location,
-    private router: ActivatedRoute
+    private router: ActivatedRoute,
+    private storage : StorageService,
+
   ) {}
 
   ngOnInit() {
-    // this.router.fragment.subscribe((fragment) => {
-    //   this.token = new URLSearchParams(fragment!).get('access_token');
-    // });
+    // console.log(this.loginUri)
+    this.token = this.token;
   }
-
+  async handleLogin(){
+    await (window.location.href = `${this.loginUri}`);
+    this.storage.setToken();
+  }
   handlePlaylistNew(id: any) {
     this.data.push({
       id: this.data.length,

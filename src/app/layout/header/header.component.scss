@@ -1,5 +1,5 @@
 .wrapper{
-  background: rgba(212, 212, 212, 0.705);
+  background: rgba(0, 0, 0);
   height:100%;
   padding:0.5rem 1rem;
   .btn-control{
@@ -9,7 +9,7 @@
       width: 40px;
       height: 40px;
       border: none;
-      background: rgb(0 0 0 / 70%);
+      background: rgb(150 150 150 / 58%);
       color: white;
       polyline{
         stroke:currentColor;
@@ -17,7 +17,7 @@
     }
   }
   .user{
-    background: rgb(0 0 0 / 70%);
+    background: rgb(150 150 150 / 58%);
     border-radius: 20px;
     width: 160px;
     height: 40px;

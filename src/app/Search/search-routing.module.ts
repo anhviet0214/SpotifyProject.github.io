@@ -10,8 +10,8 @@ const routes:Routes = [
     component: SearchComponent
   },
   {
-    path:'text',
-    component:SearchResultComponent
+    path:':value',
+    component:SearchComponent
   }
 ]
 @NgModule({

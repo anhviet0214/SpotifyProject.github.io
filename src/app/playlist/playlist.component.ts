@@ -31,7 +31,7 @@ export class PlaylistComponent implements OnInit {
   this.getAlbumDetail.getAlbumDetail(id).subscribe(playlist => {
     this.playList = playlist;
     this.playListTracks = playlist.tracks;
-    console.log(this.playListTracks)
+    // console.log(this.playListTracks)
   })
   }
 }

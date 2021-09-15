@@ -27,13 +27,17 @@ export class HomePageComponent implements OnInit {
     private getAlbumUs : GetAlbumUsService,
     private getAlbumUk : GetAlbumUkService,
     private getAlbumDetail:GetAlbumDetailService,
+    private route : Router,
   ) { }
 
   myFunction(){
     this.router.fragment.subscribe((fragment) => {
       this.token = new URLSearchParams(fragment!).get('access_token');
-        localStorage.setItem('token',this.token!);
+        sessionStorage.setItem('token',this.token!);
     })
+    // if(this.token){
+    //   this.route.navigateByUrl('/home');
+    // }
   }
   ngOnInit() {
     this.myFunction();

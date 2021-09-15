@@ -20,7 +20,7 @@ export class GetAlbumDetailService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        Authorization: 'Bearer ' + localStorage.getItem('token')
+        Authorization: 'Bearer ' + sessionStorage.getItem('token')
       })
     };
     return this.http.get(`https://api.spotify.com/v1/users/wizzler/playlists/${id}`, httpOptions);
